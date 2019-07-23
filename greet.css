@@ -249,19 +249,15 @@ p {
 body,
 html {
   height: 100%;
-}
+   background-image: url("Human-Rights-Education.jpg");
 
-.bg {
-  /* The image used */
-  background-image: url("Human-Rights-Education.png");
+   /* Full height */
+   height: 100%;
 
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 
