@@ -4,9 +4,9 @@ var display = document.querySelector(".greetingMessage");
 var radio = document.querySelector(".whichLanguage");
 var counter = document.querySelector(".nameCounter");
 
-if (localStorage["namesOfGreeted"]){
-    var name = JSON.parse(localStorage["namesOfGreeted"])
-}
+//if (localStorage["namesOfGreeted"]){
+//   var name = JSON.parse(localStorage["namesOfGreeted"])
+//}
 // var names = localStorage.getItem('namesOfGreeted');
 var instance = Greetings(name); 
 

@@ -22,7 +22,7 @@ var Greetings = function (names) {
             counter++;
             return "Molo, " + name;
         } else if (language === "Afrikaans") {
-            counter++;
+           counter++;
             return "Hallo, " + name;
         }
 
