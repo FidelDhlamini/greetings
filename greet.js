@@ -1,38 +1,48 @@
 var Greetings = function (names) {
-    let counter = 0;
     let storedNames = names || {};
-    let final;
 
     function greetMe(name, language) {
 
         //if (name) {
-            if (storedNames[name] === undefined) {
-                storedNames[name] = 0;
-            }
-        //}
+            name = name.replace(/\s/g, '')
+            name = name.replace(/[0-9]/g, '');
+            console.log(name, 'greetMe');
+            
+        if (name === "") {
+            return "Hallo, " + name.split(" ");
+        }
+         if (name === "89") {
+             return "Hallo, " + name.split(" ");
+         }
+        if (storedNames[name] === undefined) {
+            storedNames[name] = 0;
+        }
 
         if (language === "English") {
-           // counter++;
-            console.log("Hello, " + name)
+            // counter++;
             return "Hello, " + name;
         }
         if (language === "Xhosa") {
-          //  counter++;
+            //  counter++;
             return "Molo, " + name;
         } else if (language === "Afrikaans") {
-         //   counter++;
+            //   counter++;
             return "Hallo, " + name;
         }
 
     }
 
     function totalNumberOfNamesGreeted() {
+        //console.log("test")
         return Object.keys(storedNames).length
     }
 
     function getNames() {
+        console.log(storedNames)
         return storedNames;
     }
+
+
 
     // function getCount() {
     //     return counter;
@@ -40,9 +50,10 @@ var Greetings = function (names) {
 
     return {
         greet: greetMe,
-       // countNames: getCount,
+        // countNames: getCount,
         nameList: getNames,
         numberOfGreetedNames: totalNumberOfNamesGreeted,
+
     }
 
 }

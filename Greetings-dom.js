@@ -3,29 +3,27 @@ var greetBtn = document.querySelector(".greetButton");
 var display = document.querySelector(".greetingMessage");
 var radio = document.querySelector(".whichLanguage");
 var counter = document.querySelector(".nameCounter");
+var clear = document.querySelector(".resetButton");
 
-//if (localStorage["namesOfGreeted"]){
-//   var name = JSON.parse(localStorage["namesOfGreeted"])
-//}
-// var names = localStorage.getItem('namesOfGreeted');
-var instance = Greetings(name); 
+if (localStorage["names"]) {
+    var nameA = JSON.parse(localStorage.getItem("names"));
+}
+console.log(nameA)
+var instance = Greetings(nameA);
 
+instance.numberOfGreetedNames()
+counter.innerHTML = instance.numberOfGreetedNames();
 
 function greetMe() {
-    // var bag = {
-    //     'Mike ': 0,
-    //     'IViwe': 0,
-    // };
-    // localStorage.setItem('testKey', JSON.stringify(bag));
-    //var newBag = localStorage.getItem('testKey');
-    //var newerBag = JSON.parse(newBag);
-    //console.log(newerBag['Mike ']);
-    
+
+
     if (radio) {
         var language = document.querySelector("input[name='languageName']:checked");
         var greetingDisplay = instance.greet(userInput.value, language.value)
     }
-    localStorage["namesOfGreeted"] = JSON.stringify(instance.numberOfGreetedNames())
+    localStorage.setItem('names', JSON.stringify(instance.nameList()));
+
+
     display.innerHTML = greetingDisplay;
     counter.innerHTML = instance.numberOfGreetedNames();
 
@@ -35,8 +33,17 @@ function greetMe() {
 
 }
 
+function clearData() {
+
+    localStorage.clear();
+    
+
+
+}
+
 
 
 
 
 greetBtn.addEventListener('click', greetMe);
+clear.addEventListener('click', clearData);

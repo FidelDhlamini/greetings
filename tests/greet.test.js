@@ -33,19 +33,27 @@
 
 
 
-
      });
-     it('', function () {
+     it('it should clear spaces if name is typed with spaces', function () {
          var greet1 = Greetings();
 
-         assert.equal("Hallo, Fidel", greet1.greet("Fidel", "Afrikaans"));
-         assert.equal(1, greet1.numberOfGreetedNames());
-
+         assert.equal("Hallo, Fidel", greet1.greet("F i del", "Afrikaans"));
+        
 
 
 
 
      });
+    it('it should cut off numbers if name is entered with a number ', function () {
+          var greet1 = Greetings();
+
+          assert.equal("Hallo, Fidel", greet1.greet("Fidel96", "Afrikaans"));
+
+
+
+
+
+    });
 
      /* it('it should', function () {
           
