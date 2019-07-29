@@ -12,6 +12,7 @@ var Greetings = function (names) {
         name = name.replace(/\s/g, '')
         name = name.replace(/[0-9]/g, '');
         name = name.toLowerCase();
+        name = name.charAt(0).toUpperCase() + name.slice(1);
 
         if (storedNames[name] === undefined) {
             storedNames[name] = 0;
