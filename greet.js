@@ -2,11 +2,17 @@ var Greetings = function (names) {
     let storedNames = names || {};
 
     function greetMe(name, language) {
-      
+
+        if (!name) {
+            return "What's your name? Enter your name";
+        }
+        if (!language) {
+            return "Select a language";
+        }
         name = name.replace(/\s/g, '')
         name = name.replace(/[0-9]/g, '');
         name = name.toLowerCase();
-      
+
         if (storedNames[name] === undefined) {
             storedNames[name] = 0;
         }
@@ -22,15 +28,10 @@ var Greetings = function (names) {
 
             return "Hallo, " + name;
         }
-        if(name =""){
-            return "What's your name? Enter your name";
-        }
-        if (language =""){
-            return "Select a language";
-        }
 
     }
-    function convertToLowerCase(){
+
+    function convertToLowerCase() {
         return name.convertToLowerCase();
     }
 
